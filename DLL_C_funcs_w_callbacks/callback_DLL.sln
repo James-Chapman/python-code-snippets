@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "callback_DLL", "callback_DLL\callback_DLL.vcxproj", "{295D40BE-C4F9-4FE6-B0F2-18D4EA9CF436}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "DLL_Interfacing", "DLL_Interfacing\DLL_Interfacing.pyproj", "{2BBFFD58-550F-4872-A807-CBA7722FE529}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{295D40BE-C4F9-4FE6-B0F2-18D4EA9CF436}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{295D40BE-C4F9-4FE6-B0F2-18D4EA9CF436}.Debug|x64.ActiveCfg = Debug|x64
+		{295D40BE-C4F9-4FE6-B0F2-18D4EA9CF436}.Debug|x64.Build.0 = Debug|x64
+		{295D40BE-C4F9-4FE6-B0F2-18D4EA9CF436}.Debug|x86.ActiveCfg = Debug|Win32
+		{295D40BE-C4F9-4FE6-B0F2-18D4EA9CF436}.Debug|x86.Build.0 = Debug|Win32
+		{295D40BE-C4F9-4FE6-B0F2-18D4EA9CF436}.Release|Any CPU.ActiveCfg = Release|Win32
+		{295D40BE-C4F9-4FE6-B0F2-18D4EA9CF436}.Release|x64.ActiveCfg = Release|x64
+		{295D40BE-C4F9-4FE6-B0F2-18D4EA9CF436}.Release|x64.Build.0 = Release|x64
+		{295D40BE-C4F9-4FE6-B0F2-18D4EA9CF436}.Release|x86.ActiveCfg = Release|Win32
+		{295D40BE-C4F9-4FE6-B0F2-18D4EA9CF436}.Release|x86.Build.0 = Release|Win32
+		{2BBFFD58-550F-4872-A807-CBA7722FE529}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BBFFD58-550F-4872-A807-CBA7722FE529}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{2BBFFD58-550F-4872-A807-CBA7722FE529}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{2BBFFD58-550F-4872-A807-CBA7722FE529}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BBFFD58-550F-4872-A807-CBA7722FE529}.Release|x64.ActiveCfg = Release|Any CPU
+		{2BBFFD58-550F-4872-A807-CBA7722FE529}.Release|x86.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
