@@ -5,9 +5,6 @@ from header_printing_web_server import PythonHttpHandler
 import pytest
 import http
 
-g_serverThread = threading.Thread
-g_run = True
-
 def httpd(handler_class=PythonHttpHandler, server_address=('127.0.0.1', 8008), ):
     for i in range(2):
         server = http.server.HTTPServer(server_address, handler_class)
@@ -23,7 +20,6 @@ def teardown_module(module):
     """ teardown any state that was previously setup with a setup_module
     method.
     """
-    g_run = False
     g_serverThread.join()
 
 [pytest]
