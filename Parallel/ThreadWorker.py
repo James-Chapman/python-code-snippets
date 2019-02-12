@@ -16,6 +16,11 @@ class ThreadWorker(threading.Thread):
     """
     Class docs
     """
+    stop_thread = None
+    waiting_queue = None
+    waiting_lock = None
+    complete_queue = None
+    complete_lock = None
 
     def __init__(self, _waiting_queue, _waiting_lock, _complete_queue, _complete_lock):
         """
