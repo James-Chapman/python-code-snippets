@@ -37,13 +37,15 @@ class TestPythonHttpHandler:
             r1 = h1.getresponse()
             assert(r1.status == 200)
             assert(r1.reason == 'OK')
+            assert(r1.read(200) == b'<html> <head><title> do_GET </title> </head> <body> </body> </html>')
 
     [pytest]
     def test_do_POST(self):
         #with mock.patch.object(PythonHttpHandler, 'do_POST') as patched_do_POST:
             h1 = http.client.HTTPConnection('127.0.0.1:8008')
-            h1.request("GET", "/")
+            h1.request("POST", "/")
             r1 = h1.getresponse()
             assert(r1.status == 200)
             assert(r1.reason == 'OK')
+            assert(r1.read(200) == b'<html> <head><title> do_POST </title> </head> <body> </body> </html>')
 
