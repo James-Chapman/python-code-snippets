@@ -38,7 +38,10 @@ class PythonHttpHandler( http.server.BaseHTTPRequestHandler ):
             return
 
         if (self.path == "/favicon.ico"):
-            self.sendResponse(404, 'Not found', b'')
+            icon = b''
+            with open("favicon.ico", "rb") as f:
+                icon = f.read()
+            self.sendResponse(200, 'OK', b"%s" % icon)
             return
 
         path = self.path.split('/')

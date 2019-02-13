@@ -51,7 +51,7 @@ class TestPythonHttpHandler:
     @parameterized.expand([
         ("GET", "/", 200, 'OK', b'<html><head><title>do_GET</title></head><body><h1>do_GET</h1></body></html>'),
         ("GET", "/doesntexist", 404, 'Not found', b'<html><head><title>404</title></head><body><h1>404</h1></body></html>'),
-        ("GET", "/favicon.ico", 404, 'Not found', b''),
+        ("GET", "/favicon.ico", 200, 'OK', b'icon'),
         ("POST", "/", 200, 'OK', b'<html><head><title>do_POST</title></head><body><h1>do_POST</h1></body></html>'),
         ("POST", "/doesntexist", 404, 'Not found', b'<html><head><title>404</title></head><body><h1>404</h1></body></html>'),
     ])
