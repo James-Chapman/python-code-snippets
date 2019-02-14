@@ -1,18 +1,30 @@
 # -*- coding: utf-8 -*-
 #!/usr/bin/env python3
-#===============================================================================
-# Author      : James Chapman
-# Copyright   : See LICENSE.md
-# Date        : 01/01/2015
-# Description : Web server that will print client headers. Useful in client
-#               client development. Requires Python3
-#===============================================================================
+#
+# Copyright (C) James Chapman 2019
+#
+
+
+
 
 import http.server
 import socketserver
 
-class PythonHttpHandler( http.server.BaseHTTPRequestHandler ):
-    server_version= "PythonHttpHandler/0.1"
+
+
+
+
+
+
+class FileServerHTTPHandler(http.server.BaseHTTPRequestHandler):
+    server_version = "FileServerHTTPHandler/19.7"
+    conn = None
+
+    def __init__(self, request, client_address, server):
+        super(FileServerHTTPHandler, self).__init__(request, client_address, server)
+        self.server_version = "FileServerHTTPHandler/19.7"
+        self.conn = sqlite3.connect('fileStore.db')
+
     def do_GET( self ):
         self.log_message( "Command: %s Path: %s Headers: %r"
                           % ( self.command, self.path, self.headers.items() ) )
@@ -93,7 +105,7 @@ class PythonHttpHandler( http.server.BaseHTTPRequestHandler ):
 
 
 
-def httpd(handler_class=PythonHttpHandler, server_address = ('', 8008), ):
+def httpd(handler_class=FileServerHTTPHandler, server_address = ('', 8008), ):
     while (1):
         server = http.server.HTTPServer(server_address, handler_class)
         server.handle_request() # serve_forever
