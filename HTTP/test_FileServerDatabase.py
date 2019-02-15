@@ -13,7 +13,7 @@ db = FileServerDatabase()
 @pytest.mark.incremental
 class Test_FileServerDatabase(object):
 
-    #@pytest.mark.skip(reason="I want to manually inspect the DB")
+    @pytest.mark.skip(reason="I want to manually inspect the DB")
     def test_createDatabaseTables(self):
         db.createDatabaseTables()
         assert (1)
@@ -27,18 +27,18 @@ class Test_FileServerDatabase(object):
 
     def test_getFileMD5FromName(self):
         rows = db.getFileMD5FromName('Bitwarden-Installer-1.12.0.exe')
-        m = list(rows[0].iterbytes())
-        for x in m:
-            print(x, end=' ')
-
+        print("MD5: %s" % str(rows[0][0]))
         assert (rows)
 
     def test_getFileSHA1FromName(self):
         rows = db.getFileSHA1FromName('Bitwarden-Installer-1.12.0.exe')
-        print("SHA1: %s" % str(rows[0]))
+        print("SHA1: %s" % str(rows[0][0]))
         assert (rows)
 
-    #@pytest.mark.skip(reason="I want to manually inspect the DB")
+    @pytest.mark.skip(reason="I want to manually inspect the DB")
     def test_deleteDatabaseTables(self):
         db.deleteDatabaseTables()
         assert (1)
+
+
+pytest.main()
