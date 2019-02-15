@@ -1,4 +1,8 @@
 # -*- coding: utf-8 -*-
+#!/usr/bin/env python3
+#
+# Copyright (C) James Chapman 2019
+#
 
 import queue
 import threading

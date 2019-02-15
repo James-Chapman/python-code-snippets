@@ -4,17 +4,8 @@
 # Copyright (C) James Chapman 2019
 #
 
-
-
-
+import sqlite3
 import http.server
-import socketserver
-
-
-
-
-
-
 
 class FileServerHTTPHandler(http.server.BaseHTTPRequestHandler):
     server_version = "FileServerHTTPHandler/19.7"

@@ -5,10 +5,10 @@
 #
 
 import threading
-from FileServerHTTPHandler import FileServerHTTPHandler
 import pytest
 import http
 from parameterized import parameterized, parameterized_class
+from FileServerHTTPHandler import FileServerHTTPHandler
 
 def httpd(handler_class=FileServerHTTPHandler, server_address=('127.0.0.1', 8008), ):
     for i in range(7):
@@ -28,7 +28,7 @@ def teardown_module(module):
     g_serverThread.join()
 
 [pytest]
-class Test_PythonHttpHandler:
+class Test_PythonHttpHandler(object):
 
     def test_do_GET(self):
         #with mock.patch.object(FileServerHTTPHandler, 'do_GET') as patched_do_GET:

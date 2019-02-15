@@ -1,0 +1,3 @@
+[submodule "HTTP/pefile"]
+	path = HTTP/pefile
+	url = https://github.com/erocarrera/pefile.git

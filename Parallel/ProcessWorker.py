@@ -1,12 +1,8 @@
 # -*- coding: utf-8 -*-
-
-#===============================================================================
-# Author      : James Chapman
-# Copyright   : See LICENSE.md
-# Date        : 11/11/2014
-# Description :
-#===============================================================================
-
+#!/usr/bin/env python3
+#
+# Copyright (C) James Chapman 2019
+#
 import queue
 import multiprocessing
 import time
