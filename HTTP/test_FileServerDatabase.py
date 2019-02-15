@@ -5,23 +5,23 @@
 #
 
 import threading
-from FileServerDatabase import FileServerDatabase
 import pytest
+from FileServerDatabase import FileServerDatabase
 from parameterized import parameterized, parameterized_class
 
 db = FileServerDatabase()
 
 
-[pytest]
-class Test_FileServerDatabase:
+@pytest.mark.incremental
+class Test_FileServerDatabase(object):
 
-    def test_create(self):
-        #db.createDatabaseTables()
-        assert(1)
+    #@pytest.mark.skip(reason="I want to manually inspect the DB")
+    def test_createDatabaseTables(self):
+        db.createDatabaseTables()
+        assert (1)
 
     def test_insert(self):
-        r = db.insertFile('Bitwarden-Installer-1.12.0.exe')
-        assert(1)
+        assert(db.insertFile('Bitwarden-Installer-1.12.0.exe'))
 
     def test_read(self):
         rows = db.getFileContentFromName('Bitwarden-Installer-1.12.0.exe')
@@ -30,6 +30,7 @@ class Test_FileServerDatabase:
             print(r)
         assert(1)
 
-    def test_delete(self):
-        r = db.deleteDatabaseTables()
-        assert(1)
+    #@pytest.mark.skip(reason="I want to manually inspect the DB")
+    def test_deleteDatabaseTables(self):
+        db.deleteDatabaseTables()
+        assert (1)
